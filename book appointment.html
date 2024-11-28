@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Appointment - Original Dental Clinic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">Original Dental Clinic</a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="schedule-appointment.html">Schedule Appointment</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="schedule">
+            <h1>Schedule an Appointment</h1>
+            <form id="appointmentForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+                <label for="time">Preferred Time:</label>
+                <input type="time" id="time" name="time" required>
+                <label for="service">Service:</label>
+                <select id="service" name="service" required>
+                    <option value="cleaning">Cleaning</option>
+                    <option value="whitening">Whitening</option>
+                    <option value="extraction">Extraction</option>
+                    <option value="filling">Filling</option>
+                    <option value="checkup">Check-up</option>
+                </select>
+                <button type="button" id="scheduleAppointmentBtn">Schedule Appointment</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Original Dental Clinic. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("scheduleAppointmentBtn").addEventListener("click", function() {
+            window.location.href = "appointment_confirmation.html?" + new URLSearchParams(new FormData(document.getElementById("appointmentForm"))).toString();
+        });
+    </script>
+</body>
+</html>
